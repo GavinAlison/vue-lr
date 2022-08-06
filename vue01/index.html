@@ -5,13 +5,14 @@
     <title>vue demo1</title>
     <script src="https://cdn.staticfile.org/vue/2.7.0/vue.min.js"></script>
 </head>
+
 <body>
     <div id="app">
         <p>{{message}}</p>
     </div>
     <div id="app2">
         <!-- <span  v-bind:title="message">mounts online</span> -->
-        <span  :title="message">
+        <span :title="message">
             mounts online
         </span>
     </div>
@@ -45,12 +46,8 @@
               我们也需要为每个组件提供一个“key”，稍后再
               作详细解释。
             -->
-            <todo-item
-              v-for="item in groceryList"
-              v-bind:todo="item"
-              v-bind:key="item.id"
-            ></todo-item>
-          </ol>
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ol>
     </div>
     <p>---------------------------------</p>
     <div id="app9">
@@ -82,51 +79,52 @@
                 a7_msg: 'hello vue'
             }
         })
-    new Vue({
-        el: '#app6',
-        data: {
-            a6_msg: '123456'
-        },
-        methods: {
-            reverseMsg: function(){
-                this.a6_msg = this.a6_msg.split('').reverse().join('')
+        new Vue({
+            el: '#app6',
+            data: {
+                a6_msg: '123456'
+            },
+            methods: {
+                reverseMsg: function () {
+                    this.a6_msg = this.a6_msg.split('').reverse().join('')
+                }
             }
-        }
-    })
-    new Vue({
-        el: '#app5',
-        data: {
-            todos: [
-                {text: 'javascript'},
-                {text: 'vue'},
-                {text: 'node'}
-            ]
-        }
-    })
-    new Vue({
-        el: '#app4',
-        data: {
-            app_msg: '<h1>alison</h1>'
-        }
-    })
-    new Vue({
-        el: '#app',
-        data: {
-            message: 'hi vue js'
-        }
-    })
-    new Vue({
-        el: '#app2',
-        data:{
-            message: 'current time: '+ new Date().toLocaleString()
-        }
-    })
-    new Vue({
-        el: '#app3',
-        data: {
-            seen: true
-        }
-    })
+        })
+        new Vue({
+            el: '#app5',
+            data: {
+                todos: [
+                    { text: 'javascript' },
+                    { text: 'vue' },
+                    { text: 'node' }
+                ]
+            }
+        })
+        new Vue({
+            el: '#app4',
+            data: {
+                app_msg: '<h1>alison</h1>'
+            }
+        })
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'hi vue js'
+            }
+        })
+        new Vue({
+            el: '#app2',
+            data: {
+                message: 'current time: ' + new Date().toLocaleString()
+            }
+        })
+        new Vue({
+            el: '#app3',
+            data: {
+                seen: true
+            }
+        })
     </script>
 </body>
+
 </html>

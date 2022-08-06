@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="app1" v-bind:class="{active: isActive}">123</div>
+        <div id="app2" class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">234</div>
+        <div v-bind:class="classObject">345</div>
+        <div v-bind:class="classObjectComputed">456</div>
+        <div v-bind:class="[activeClass, errorClass]">errorClass</div>
+        <my-component class="baz boo"></my-component>
+        <my-component v-bind:class="{ active: isActive }"></my-component>
+        <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">style</div>
+        <br />
+        <div v-bind:style="styleObject">style2</div>
+    </div>
+    <script>
+        Vue.component('my-component', {
+            template: '<p class="foo bar">Hi</p>'
+        })
+        new Vue({
+            el: '#app',
+            data: {
+                isActive: true,
+                hasError: false,
+                classObject: {
+                    active: true,
+                    'text-danger': true
+                },
+                activeClass: 'active',
+                errorClass: 'text-danger',
+                activeColor: 'red',
+                fontSize: 30,
+                styleObject: {
+                    color: 'red',
+                    fontSize: '20px'
+                }
+            },
+            computed: {
+                classObjectComputed: function () {
+                    return {
+                        active: this.isActive && !this.hasError,
+                        'text-danger': this.hasError && this.hasError.type === 'fatal'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
