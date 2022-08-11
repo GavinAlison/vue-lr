@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>watch demo</title>
+    <script src="https://unpkg.com/vue@2"></script>
+</head>
+
+<body>
+    <div id="demo">
+        <div>
+            <p>FullName: {{fullName}}</p>
+            <p>FirstName: <input type="text" v-model="firstName"></p>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#demo',
+            data: {
+                firstName: 'Dawei',
+                lastName: 'Lou',
+                fullName: ''
+            },
+            watch: {
+                firstName(newName, oldName) {
+                    this.fullName = newName + ' ' + this.lastName;
+                },
+                // 代表在wacth里声明了firstName这个方法之后立即先去执行handler方法，如果设置了false，那么效果和上边例子一样
+                immediate: true,
+                // 侦听普通变量的变化是使用以上方法，当侦听的某个变量值是对象时则不起作用，这时需要使用deep深度监听。
+                deep: true
+            }
+        })
+    </script>
+</body>
+
+</html>

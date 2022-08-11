@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <title>slot demo</title>
+    <script src="https://unpkg.com/vue@2"></script>
+    <style>
+
+    </style>
+</head>
+<template id="abc">
+    <div>
+        AA
+        <slot :customname="mydata">
+            <div>{{mydata}}}</div>
+        </slot>
+        BB
+    </div>
+</template>
+
+<body>
+    <div id="app">
+        <mycomponent>
+            <template slot-scope="usename">
+                <div>{{usename.customname}}</div>
+            </template>
+        </mycomponent>
+    </div>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                msg: 'm1',
+            },
+            components: {
+                mycomponent: {
+                    template: '#abc',
+                    data() {
+                        return {
+                            mydata: ['a1', 'a2', 'a3']
+                        }
+                    }
+                },
+            },
+        })
+    </script>
+</body>
+
+</html>
