@@ -112,8 +112,4 @@ new Vue({
 v-model是一个指令，限制在`<input>、<select>、<textarea>、components`中使用 用于数据的双向绑定操作.
 
 
-
-
-
-
 > https://www.php.cn/vuejs/464673.html
