@@ -7,11 +7,38 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "launch programe",
+            "name": "launch promise2-1",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\doc\\JS\\promise-02.js"
+            "program": "${workspaceFolder}\\doc\\JS\\promise-02-1.js",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "launch promise2-2",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\doc\\JS\\promise-02-2.js",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "launch promise2-3",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\doc\\JS\\promise-02-3.js",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "launch promise2-4",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\doc\\JS\\promise-02-4.js",
         }
     ]
 }

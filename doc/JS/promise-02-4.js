@@ -1,4 +1,3 @@
-let promiseCount = 1;
 /**
  * Promise对象代表一个异步操作，有三种状态：
  * Pending（进行中）、
@@ -15,8 +14,10 @@ let promiseCount = 1;
  * 当执行到 reject() 这个方法的时候，就改变 promise的状态为 reject，
  * 当promise为reject就可以.catch()这个promise了
  * 
- * 
+ * 链式调用2-4
  */
+
+let promiseCount = 1;
 //完整的实现 测试Demo
 class Promise {
     callbacks = [];
@@ -40,17 +41,13 @@ class Promise {
     _handle(callback) {
         console.log('[%s]:_handle', this.name, 'state=', this.state);
 
-        console.log('callback--', callback.onFulfilled, callback.resolve)
         if (this.state === 'pending') {
             this.callbacks.push(callback);
             console.log('[%s]:_handle', this.name, 'callbacks=', this.callbacks);
             return;
         }
-
-        console.log('[%s]: callback.inFulfilled', this.name, ' onFulfilled=', callback.onFulfilled);
         //如果then中没有传递任何东西
         if (!callback.onFulfilled) {
-            console.log('[%s]: callback.inFulfilled', this.name, ' onFulfilled=', callback.onFulfilled);
             callback.resolve(this.value);
             return;
         }
@@ -60,7 +57,7 @@ class Promise {
     _resolve(value) {
         console.log('[%s]:_resolve', this.name);
         console.log('[%s]:_resolve', this.name, 'value=', value);
-        console.log('typeof value', (typeof value))
+
         if (value && (typeof value === 'object' || typeof value === 'function')) {
             var then = value.then;
             if (typeof then === 'function') {
@@ -86,11 +83,20 @@ const mockAjax = (url, s, callback) => {
         callback(url + '异步请求耗时' + s + '秒');
     }, 1000 * s)
 }
-
-new Promise(resolve => {
+const pUserId = new Promise(resolve => {
     mockAjax('getUserId', 1, function (result) {
         resolve(result);
     })
-}).then(result => {
-    console.log(result);
+})
+const pUserName = new Promise(resolve => {
+    mockAjax('getUserName', 2, function (result) {
+        resolve(result);
+    })
+})
+
+pUserId.then(id => {
+    console.log(id)
+    return pUserName
+}).then(name => {
+    console.log(name)
 })
