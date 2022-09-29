@@ -1,44 +1,43 @@
 {
-    // 使用 IntelliSense 了解相关属性。 
-    // 悬停以查看现有属性的描述。
-    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "launch promise2-1",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}\\doc\\JS\\promise-02-1.js",
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "launch promise2-2",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}\\doc\\JS\\promise-02-2.js",
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "launch promise2-3",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}\\doc\\JS\\promise-02-3.js",
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "launch promise2-4",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}\\doc\\JS\\promise-02-4.js",
-        }
-    ]
+  // 使用 IntelliSense 了解相关属性。
+  // 悬停以查看现有属性的描述。
+  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "vue-lr_4d246189"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "launch promise2-1",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\doc\\JS\\promise-02-1.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "launch promise2-2",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\doc\\JS\\promise-02-2.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "launch promise2-3",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\doc\\JS\\promise-02-3.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "launch promise2-4",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\doc\\JS\\promise-02-4.js"
+    }
+  ]
 }
