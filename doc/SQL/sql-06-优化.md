@@ -182,27 +182,32 @@ kB_wrtn：写入的总数量数据量；这些单位都为Kilobytes。
 ## 1.5.2 硬件优化
 
 主机方面：
+
 - 根据数据库类型，主机CPU选择、内存容量选择、磁盘选择
 - 平衡内存和磁盘资源
 - 随机的I/O和顺序的I/O
 - 主机 RAID卡的BBU(Battery Backup Unit)关闭
 
 cpu的选择：
+
 - cpu的两个关键因素：核数、主频
 - 根据不同的业务类型进行选择：
 - cpu密集型：计算比较多，OLTP 主频很高的cpu、核数还要多
 - IO密集型：查询比较，OLAP 核数要多，主频不一定高的
 
 内存的选择：
+
 - OLAP类型数据库，需要更多内存，和数据获取量级有关。
 - OLTP类型数据一般内存是cpu核心数量的2倍到4倍，没有最佳实践。
 
 存储方面：
+
 - 根据存储数据种类的不同，选择不同的存储设备
 - 配置合理的RAID级别(raid5、raid10、热备盘)
 - 对与操作系统来讲，不需要太特殊的选择，最好做好冗余（raid1）（ssd、sas 、sata）
 
 raid卡：主机raid卡选择：
+
 - 实现操作系统磁盘的冗余（raid1）
 - 平衡内存和磁盘资源
 - 随机的I/O和顺序的I/O
@@ -235,16 +240,18 @@ IO ：
 raid、no lvm、 ext4或xfs、ssd、IO调度策略
 
 Swap调整(不使用swap分区)
-```
+
+```shell
 /proc/sys/vm/swappiness的内容改成0（临时）
 /etc/sysctl.conf上添加vm.swappiness=0（永久）
 ```
+
 这个参数决定了Linux是倾向于使用swap，还是倾向于释放文件系统cache。在内存紧张的情况下，数值越低越倾向于释放文件系统cache。当然，这个参数只能减少使用swap的概率，并不能避免Linux使用swap。
 修改MySQL的配置参数innodb_flush_method，开启O_DIRECT模式。这种情况下，InnoDB的buffer pool会直接绕过文件系统cache来访问磁盘，但是redo log依旧会使用文件系统cache。值得注意的是，Redo log是覆写模式的，即使使用了文件系统的cache，也不会占用太多
 
 ## IO调度策略
 
-```
+```shell
 #echo deadline>/sys/block/sda/queue/scheduler #临时修改为deadline
 永久修改如下：
 vi /boot/grub/grub.conf
@@ -255,7 +262,8 @@ kernel /boot/vmlinuz-2.6.18-8.el5 ro root=LABEL=/ elevator=deadline rhgb quiet
 ## 1.5.5 系统参数调整
 
 Linux系统内核参数优化
-```
+
+```shell
 vim /etc/sysctl.conf 
  net.ipv4.ip_local_port_range = 1024 65535 # 用户端口范围 
  net.ipv4.tcp_max_syn_backlog = 4096 
@@ -265,7 +273,7 @@ vim /etc/sysctl.conf
 
 用户限制参数（mysql可以不设置以下配置）
 
-```
+```shell
 vim /etc/security/limits.conf 
  * soft nproc 65535 
  * hard nproc 65535 
@@ -276,7 +284,8 @@ vim /etc/security/limits.conf
 ## 1.5.6 应用优化
 
 业务应用和数据库应用独立,防火墙：iptables、selinux等其他无用服务(关闭)：
-```
+
+```shell
 chkconfig --level 23456 acpid off 
 chkconfig --level 23456 anacron off 
 chkconfig --level 23456 autofs off 
@@ -309,7 +318,7 @@ SQL优化方向：
 调整：
 实例整体（高级优化，扩展）
 
-```
+```text
 thread_concurrency   #并发线程数量个数 
 sort_buffer_size     #排序缓存 
 read_buffer_size     #顺序读取缓存 
@@ -321,7 +330,7 @@ thread_cache_size    #线程缓存(1G—>8, 2G—>16, 3G—>32, >3G—>64)
 连接层（基础优化）
 设置合理的连接客户和连接方式
 
-```
+```text
 max_connections        #最大连接数，看交易笔数设置 
 max_connect_errors     #最大错误连接数，能大则大 
 connect_timeout        #连接超时 
@@ -340,7 +349,7 @@ back_log               #可以在堆栈中的连接数量
 
 ## 1.6.2 存储引擎层（innodb基础优化参数）
 
-```
+```text
 default-storage-engine 
 innodb_buffer_pool_size # 没有固定大小，50%测试值，看看情况再微调。但是尽量设置不要超过物理内存70% innodb_file_per_table=(1,0) 
 innodb_flush_log_at_trx_commit=(0,1,2) #1是最安全的，0是性能最高，2折中 
