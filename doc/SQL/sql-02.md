@@ -29,8 +29,8 @@
 
 ## mysql 的基本操作
 
-```
-windows
+```sql
+-- windows
 
 -- 启动mysql
 net start mysql
@@ -46,7 +46,7 @@ SHOW VARIABLES -- 显示系统变量信息
 ```
 
 数据库操作
-```
+```sql
 -- 查看当前数据库
 select database();
 -- 显示当前时间、用户名、数据库版本
@@ -71,7 +71,7 @@ DROP DATABASE[ IF EXISTS] 数据库名
 
 表的操作
 
-```
+```sql
 -- 创建表
 CREATE [TEMPORARY] TABLE[ IF NOT EXISTS] [库名.]表名 ( 表的结构定义 )[ 表选项]
 每个字段必须有数据类型
