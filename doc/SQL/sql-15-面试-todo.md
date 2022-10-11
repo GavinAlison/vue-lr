@@ -1,0 +1,8 @@
+# todo
+
+- [100道MySql面试题之（一）](https://mp.weixin.qq.com/s?__biz=MzI0MDQ4MTM5NQ==&mid=2247484699&idx=1&sn=964df87965f6b2cfc7282e7409a43958&chksm=e91b6007de6ce91193369fb4288c4b234a09e9323a4d6ac5ea2ec7564da147ccdf08caf6a3cf&scene=21#wechat_redirect)
+- [100道MySql面试题之（二）](https://mp.weixin.qq.com/s?__biz=MzI0MDQ4MTM5NQ==&mid=2247484703&idx=1&sn=3eaa3a3cf822849996be89d93ffb33b9&chksm=e91b6003de6ce915d7e9f246b457965fc84c0c69fe4a637fae250367f8629d1577f1cbacc3d7&scene=21#wechat_redirect)
+- [100道MySql面试题之（三）](https://mp.weixin.qq.com/s?__biz=MzI0MDQ4MTM5NQ==&mid=2247484710&idx=1&sn=eb22de8c7ff6f1dcbc4c0ba4226449d0&chksm=e91b603ade6ce92c2c4c619157e72fd1a1fe0d967bdc0373ddc08a1eb114897ed8f7a2f1ba46&scene=21#wechat_redirect)
+- [100道MySql面试题之（四）](https://mp.weixin.qq.com/s?__biz=MzI0MDQ4MTM5NQ==&mid=2247484835&idx=1&sn=d77c8f0cad7e65c34fb792004bdabb14&chksm=e91b60bfde6ce9a95afae4681a8017f6d1b7d90506acc0704827ddb12ce9d48cbe756d577916&scene=21#wechat_redirect)
+- [史上最全的大厂Mysql面试题在这里](https://mp.weixin.qq.com/s?__biz=MzI0MDQ4MTM5NQ==&mid=2247485499&idx=1&sn=33002d06faa43d8192c7acc3e0f6e1a7&chksm=e91b6d27de6ce4315a5d8dcc5d40d2f6430d84b736088f2d6c57d1aeb6e6814589e76cb9f7e9&token=821580240&lang=zh_CN#rd)
+- [MySQL 高频面试题，都在这了](https://mp.weixin.qq.com/s?__biz=MzI0MDQ4MTM5NQ==&mid=2247501102&idx=2&sn=051d666bc08e891ecfe1c21a2795193c&chksm=e918a032de6f29245c384cbef9c762b8fb3792587a92ee2a86376c9c31457eb6023997a2a134&token=821580240&lang=zh_CN#rd)

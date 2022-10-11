@@ -20,7 +20,6 @@ Info: 一般记录的是线程执行的语句。默认只显示前100个字符�
 按客户端 IP 分组，看哪个客户端的链接数最多
 
 ```sql
-
 select  client_ip, 
         count(client_ip) as client_num 
 from ( 
@@ -49,6 +48,5 @@ where Command != 'Sleep'
     and Time > 300 
 order by Time desc;
 ```
-
 
 > https://www.cnblogs.com/ScarecrowAnBird/p/14192018.html
