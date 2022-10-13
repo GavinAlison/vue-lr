@@ -5,5 +5,5 @@
 3. [MySQL太慢？试试这些诊断思路和工具](https://mp.weixin.qq.com/s?__biz=MzI0MDQ4MTM5NQ==&mid=2247487112&idx=1&sn=00f17802b225944d656ad0995341c3c8&chksm=e91b6b94de6ce282b033a0b2c21382462ccc7f026ab72576b0a79ac510570c0878e7180ca096&token=821580240&lang=zh_CN#rd)
 4. OOM代码更新  done
 5. slow log的日志实例演练  done
-6. explain sql 的实例演练，实例数超过20个  
-7. mysql-5.7 windows download下载
+6. explain sql 的实例演练，实例数超过20个    done
+7. mysql-5.7 windows download下载  done
