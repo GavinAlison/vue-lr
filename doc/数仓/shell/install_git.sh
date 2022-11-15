@@ -45,4 +45,3 @@ function yum_install_maven() {
 
 install_jdk()
 install_maven()
-
