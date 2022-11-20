@@ -40,4 +40,19 @@ do
 done
 
 # 执行脚本
+sh -x  /opt/module/data-warehouse-script/lg.sh
 
+# 集群所有进程查看脚本
+
+vim xcall.sh
+#!/bin/bash
+
+for i in hadoop102 hadoop104 hadoop106;
+do
+    echo -----------$i--------------
+    ssh $i "$*"
+done
+
+# 执行脚本
+chmod +x xcall.sh
+xcall.sh jps
